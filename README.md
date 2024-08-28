@@ -37,13 +37,13 @@ To install `rsgen` so that you can run it from anywhere on your system, follow t
    This command compiles and installs the binary in Cargo's bin directory (typically `~/.cargo/bin`), making it accessible from anywhere on your system.
 
 2. **Add to PATH**:
-   Ensure that Cargo's bin directory is in your system's `PATH` environment variable. If it's not already, you can add it by placing the following line in your shell's configuration file (e.g., `~/.bashrc`, `~/.zshrc`, etc.):
+   Ensure that Cargo's bin directory is in your system's `PATH` environment variable. If it's not already, you can add it by placing the following line in your shell's configuration file (e.g., `~/.bashrc`):
    ```bash
-   export PATH="$HOME/.cargo/bin:$PATH"
+   echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
    ```
    After adding this line, reload your shell configuration by running:
    ```bash
-   source ~/.bashrc  # or source ~/.zshrc
+   source ~/.bashrc
    ```
 
 Once installed, you can run `rsgen` from anywhere in your terminal.
