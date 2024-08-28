@@ -30,20 +30,3 @@ pub struct Docstring {}
 
 #[derive(Parser)]
 pub struct Tests {}
-
-// Placeholder function for running the `generate` command
-pub fn run_generate(generate: Generate) {
-    match generate.command {
-        Some(GenerateSubcommands::Docstring(_)) => {
-            println!("Generating docstring...");
-            // Call your docstring generation logic here
-        }
-        Some(GenerateSubcommands::Tests(_)) => {
-            println!("Generating tests...");
-            // Call your tests generation logic here
-        }
-        None => {
-            eprintln!("No command provided.");
-        }
-    }
-}

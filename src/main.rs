@@ -4,14 +4,13 @@ use clap::{Parser, Subcommand, ValueEnum};
 use log::{info, LevelFilter};
 use std::sync::{Arc, Mutex};
 
-// Import the generate module with an alias to avoid name conflict
-use crate::cli::generate::{Generate as GenerateCLI, run_generate};
+use crate::cli::generate::{Generate as GenerateCLI};
 
 #[derive(Parser)]
 #[command(
     name = "RsGen",
-    version = "0.0.1",
-    author = "Chris Jackett",
+    version = env!("CARGO_PKG_VERSION"),
+    author = env!("CARGO_PKG_AUTHORS"),
     about = "A Rust Generative AI Co-pilot",
     arg_required_else_help(true)
 )]
@@ -123,7 +122,7 @@ fn main() {
         .filter(None, level)
         .init();
 
-    info!("Initialised RsGen CLI v0.0.1");
+    info!("Initialised RsGen CLI v{}", env!("CARGO_PKG_VERSION"));
 
     // Set up LLM client and context (placeholder)
     let _llm_client = Arc::new(Mutex::new(LLMClient::new()));
